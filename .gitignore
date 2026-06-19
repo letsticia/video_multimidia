@@ -141,3 +141,12 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+/.next/
+/out/
+.env*.local
+npm-debug.log*
+
+# Vídeos do usuário não devem ir para o controle de versão
+/public/videos/*
+!/public/videos/.gitkeep

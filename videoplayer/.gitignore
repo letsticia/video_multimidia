@@ -1,0 +1,9 @@
+/node_modules
+/.next/
+/out/
+.env*.local
+npm-debug.log*
+
+# Vídeos do usuário não devem ir para o controle de versão
+/public/videos/*
+!/public/videos/.gitkeep

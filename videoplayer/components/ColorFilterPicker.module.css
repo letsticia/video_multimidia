@@ -1,0 +1,60 @@
+.wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.swatches {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px 6px 6px;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.swatch:hover {
+  color: var(--text);
+}
+
+.swatch.active {
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.swatchLabel {
+  white-space: nowrap;
+}

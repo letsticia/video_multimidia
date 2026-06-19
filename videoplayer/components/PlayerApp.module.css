@@ -1,0 +1,67 @@
+.app {
+  min-height: 100vh;
+  padding: 28px clamp(16px, 4vw, 48px) 60px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 34px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-shadow: 0 0 18px var(--accent-soft);
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.playerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.emptyStage {
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.emptyStage code {
+  background: var(--bg-elevated);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+@media (max-width: 880px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}

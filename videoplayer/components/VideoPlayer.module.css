@@ -1,0 +1,218 @@
+.playerCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: filter 0.35s ease;
+}
+
+/* Camada de tonalidade: combinada com grayscale() no vídeo, o blend "color"
+   pinta apenas o matiz/saturação preservando a luminosidade original —
+   por isso as barras pretas do letterbox continuam pretas. */
+.toneOverlay {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
+.titleBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+.controls {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timecode {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  min-width: 44px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* Trilha com pequenas marcações lembrando perfurações de filme */
+.seekBar {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border) 0,
+    var(--border) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.seekBar::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.seekBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  margin-top: -4px;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  cursor: pointer;
+}
+
+.seekBar::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+}
+
+.seekBar::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  cursor: pointer;
+}
+
+.mainRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconBtn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.iconBtn:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+.playBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #1a1306;
+  border: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  transition: filter 0.15s;
+}
+
+.playBtn:hover {
+  filter: brightness(1.08);
+}
+
+.volumeGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volumeBar {
+  width: 110px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.volumeBar::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.volumeBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text);
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+.volumeBar::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.volumeBar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text);
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .volumeBar {
+    width: 70px;
+  }
+}

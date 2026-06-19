@@ -1,0 +1,136 @@
+.wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  font-size: 20px;
+  margin: 0;
+  color: var(--text);
+}
+
+.refreshBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.refreshBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.empty code {
+  background: var(--bg-elevated);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 560px;
+  overflow-y: auto;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 9px 10px;
+  text-align: left;
+  color: var(--text-muted);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.item:hover {
+  background: var(--bg-elevated);
+}
+
+/* Destaque do vídeo selecionado/em reprodução na playlist */
+.item.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.item.active .index {
+  color: var(--accent);
+}
+
+.itemTitle {
+  flex: 1;
+  font-size: 13.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.45;
+  flex-shrink: 0;
+}
+
+.status.playing {
+  opacity: 1;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
